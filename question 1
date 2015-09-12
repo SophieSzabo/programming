@@ -1,0 +1,41 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+  int penny, nickel, dime, quarter, loonie, toonie, amount, original;
+  penny = nickel = dime = quarter = loonie = toonie = 0;
+
+  cout << "Please type the amount of money to be converted into coins" << endl;
+  cin >> amount;
+  original = amount;
+
+  while(amount >= 200){
+    toonie++;
+    amount = amount-200;
+  }
+  while (amount >= 100){
+    loonie++;
+    amount = amount-100;
+  }
+  while (amount >= 25){
+    quarter++;
+    amount = amount-25;
+  }
+  while (amount >= 10){
+    dime++;
+    amount = amount-10;
+  }
+  while (amount >= 5){
+    nickel++;
+    amount = amount-5;
+  }
+  while (amount >= 1){
+    penny++;
+    amount--;
+  }
+
+  cout << original << " Canadian dollars in coins: " << toonie << " toonies, " << loonie << " loonies, " << quarter << " quarters, " << dime << " dimes, " << nickel << " nickels, " << penny << " pennies." << endl;
+
+  return 0;
+}
