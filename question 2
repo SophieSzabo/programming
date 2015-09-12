@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+
+void sorting(int *original);
+
+int main(){
+
+int numbers[8] = {2,3,6,8,4,10,7,5};
+
+sorting((int*)numbers);
+
+for (int i = 0; i < 8; i++ ){
+    cout << numbers[i] << endl;
+}
+ /*   for (int i = 0; i < 8; i++ ){
+    cout << numbers[i] << endl;
+}*/
+
+return 0;
+}
+
+void sorting(int *original)
+{
+
+    int store;
+    int i = 0;
+        while (i < 8)
+            {
+            if (original[i] < original[i+1])
+                {
+                store = original[i+1];
+                original[i+1] = original[i];
+                original[i] = store;
+                i = 0;
+                } else i++;
+            }
+}
+
+
